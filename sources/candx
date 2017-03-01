@@ -1,0 +1,2 @@
+nasm -f elf64 -o strlen.o strlen.asm
+ld strlen.o -o yo

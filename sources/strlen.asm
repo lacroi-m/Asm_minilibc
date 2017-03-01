@@ -1,6 +1,6 @@
 
 section .data
-	text db "hello",5
+	text db "hello",10
 section .text
 	global _start
 
