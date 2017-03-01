@@ -5,7 +5,7 @@
 ## Login   <lacroi_m@epitech.net>
 ##
 ## Started on  Wed Mar 1 14:03:03 CET 2017 Lacroix Maxime
-## Last update Wed Mar  1 15:01:37 2017 Lacroix Maxime
+## Last update Wed Mar  1 16:41:35 2017 virgile
 ##
 
 CC	= gcc
@@ -25,9 +25,8 @@ FLAGS	= -f elf64
 
 all:   	$(NAME)
 
-
 $(NAME):
-	$(NASM) -o $(OBJ) $(SRC) $(FLAGS) && \
+	$(NASM) -o $(OBJ) $(SRC) $(FLAGS)
 	$(CC) -shared -o  $(NAME) $(OBJ)
 
 clean:
@@ -37,3 +36,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re:	fclean all
+
+.PHONY: all clean fclean re
