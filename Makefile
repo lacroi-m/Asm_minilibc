@@ -1,12 +1,18 @@
 ##
-## Makefile for Makefile in /home/juniqu_v/rendu/asm_minilibc
-## 
-## Made by virgile
-## Login   <juniqu_v@epitech.net>
-## 
-## Started on  Tue Feb 28 09:46:49 2017 virgile
-## Last update Wed Mar  1 12:54:36 2017 virgile
+## Makefile for in /home/lacroi_m/asm_minilibc
 ##
+## Made by Lacroix Maxime 
+## Login   <lacroi_m@epitech.net>
+##
+## Started on  Wed Mar 1 14:03:03 CET 2017 Lacroix Maxime
+## Last update Wed Mar  1 15:01:37 2017 Lacroix Maxime
+##
+
+CC	= gcc
+
+NASM	= nasm
+
+RM	= rm -f
 
 NAME	= libasm.so
 
@@ -15,24 +21,19 @@ SRC	= $(addprefix sources/, \
 
 OBJ	= $(SRC:.asm=.o)
 
-NASM	= nasm -f elf64 -Werror
+FLAGS	= -f elf64
 
-LD	= ld -shared -fPIC
+all:   	$(NAME)
 
-RM	= rm -f
 
-$(NAME): $(OBJ)
-	 $(LD) -o $(NAME) $(OBJ)
-
-all:	 $(NAME)
-
-%.o:	 %.asm
-	 $(NASM) -o $@ $<
+$(NAME):
+	$(NASM) -o $(OBJ) $(SRC) $(FLAGS) && \
+	$(CC) -shared -o  $(NAME) $(OBJ)
 
 clean:
-	 $(RM) $(OBJ)
+	$(RM) $(OBJ)
 
-fclean:	 clean
-	 $(RM) $(NAME)
+fclean: clean
+	$(RM) $(NAME)
 
-re:	 fclean all
+re:	fclean all
