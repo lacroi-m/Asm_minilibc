@@ -1,0 +1,16 @@
+Virgile:
+• [STRLEN]: DONE
+• strchr
+• memset
+• memcpy
+• strcmp
+• memmove
+
+
+Max:
+• strncmp
+• strcasecmp
+• rindex
+• strstr
+• strpbrk
+• strcspn
