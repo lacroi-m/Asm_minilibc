@@ -1,16 +1,13 @@
-
-section .data
-	text db "hello",10
+BITS	64
 section .text
-	global _start
+	global strlen
 
-_start:
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, text
-	mov rdx, 14
-	syscall
-
-	mov rax, 60
-	mov rdi, 0
-	syscall
+strlen:
+	XOR	rax, rax
+_loop:
+	CMP	[rdi + rax], BYTE 0
+	JE	_end
+	INC	rax
+	JMP	_loop
+_end:
+	RET
