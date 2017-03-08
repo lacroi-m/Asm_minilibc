@@ -5,7 +5,7 @@
 ** Login   <juniqu_v@epitech.net>
 **
 ** Started on  Wed Mar  8 10:51:36 2017 virgile
-** Last update Wed Mar  8 12:05:56 2017 virgile
+** Last update Wed Mar  8 14:24:53 2017 virgile
 */
 
 #include <stdio.h>
@@ -30,27 +30,27 @@ static void	test_strchr()
   char *ptr = my_strchr("pute", 't');
 
   if (ptr)
-    printf("ptr = %s\n", ptr);
+    printf("sa marche == true\n");
   else
-    puts("null il marche pas");
+    printf("marche pas == false\n");
 
   ptr = my_strchr("salope56", '5');
   if (ptr)
-    printf("ptr = %s\n", ptr);
+    printf("sa marche == true\n");
   else
-    puts("NULL ptr");
+    printf("marche pas == false\n");
 
   ptr = my_strchr("moche", 'z');
   if (ptr)
-    printf("marche pas");
+    printf("marche pas == false\n");
   else
-    puts("sa marche");
+    printf("sa marche == true \n");
 
   ptr = my_strchr("Coucou", '\0');
   if (ptr)
-    printf("ptr = %s\n", ptr);
+    printf("sa marche pas == false\n");
   else
-    puts("sa marche");
+    printf("sa marche == true\n");
 }
 
 int	main()
