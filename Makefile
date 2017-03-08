@@ -5,10 +5,14 @@
 ## Login   <lacroi_m@epitech.net>
 ##
 ## Started on  Wed Mar 1 14:03:03 CET 2017 Lacroix Maxime
-## Last update Wed Mar  1 16:41:35 2017 virgile
+## Last update Wed Mar  8 12:03:18 2017 virgile
 ##
 
 CC	= gcc
+
+CFLAGS	+= -W -Wall -Wextra -Werror
+
+LDFLAGS = -shared -fpic
 
 NASM	= nasm
 
@@ -16,25 +20,37 @@ RM	= rm -f
 
 NAME	= libasm.so
 
-SRC	= $(addprefix sources/, \
+SRCS	= $(addprefix sources/, \
+		strchr.asm\
 		strlen.asm)
 
-OBJ	= $(SRC:.asm=.o)
+OBJS	= $(SRCS:.asm=.o)
 
-FLAGS	= -f elf64
+AFLAGS	= -f elf64
+
+TEST	= main.c
+
+OBJS_C	= $(TEST:.c=.o);
+
+%.o:	%.asm
+	${NASM} $< ${AFLAGS} -o $@
 
 all:   	$(NAME)
 
-$(NAME):
-	$(NASM) -o $(OBJ) $(SRC) $(FLAGS)
-	$(CC) -shared -o  $(NAME) $(OBJ)
+$(NAME): $(OBJS)
+	 $(CC) $(LDFLAGS) -o $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re:	fclean all
+
+test:	$(OBJS_C)
+	$(CC) $(CFLAGS) -o test main.o -L./ -lasm
+	$(RM) main.o
+	LD_PRELOAD=./libasm.so ./test
 
 .PHONY: all clean fclean re
