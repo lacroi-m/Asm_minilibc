@@ -2,3 +2,4 @@ libasm.so
 *.o
 *.~
 #*#
+test

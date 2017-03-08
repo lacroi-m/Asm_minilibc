@@ -5,7 +5,7 @@
 ** Login   <juniqu_v@epitech.net>
 **
 ** Started on  Wed Mar  8 10:51:36 2017 virgile
-** Last update Wed Mar  8 14:24:53 2017 virgile
+** Last update Wed Mar  8 14:27:02 2017 virgile
 */
 
 #include <stdio.h>
@@ -47,7 +47,7 @@ static void	test_strchr()
     printf("sa marche == true \n");
 
   ptr = my_strchr("Coucou", '\0');
-  if (ptr)
+  if (!ptr)
     printf("sa marche pas == false\n");
   else
     printf("sa marche == true\n");
