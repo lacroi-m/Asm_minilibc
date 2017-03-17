@@ -1,8 +1,8 @@
 BITS	64
 section .text
-	global my_strlen:function
+	global strlen:function
 
-my_strlen:
+strlen:
 	XOR	rax, rax
 _loop:
 	CMP	[rdi + rax], BYTE 0

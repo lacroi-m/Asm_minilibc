@@ -1,8 +1,8 @@
 	BITS	64
 	section	.text
-	global my_strchr:function
+	global strchr:function
 
-my_strchr:
+strchr:
 	push rbp
 	mov rbp, rsp
 
