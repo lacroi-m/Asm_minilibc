@@ -1,14 +1,14 @@
 Virgile:
 • [STRLEN]: DONE
 • strchr : DONE
- rindex
+• rindex
 • memmove
 • memset
 • memcpy
 
 Max:
- strcmp
-• strncmp
+• strcmp [TESTED] attente de la moulinnette
+• strncmp [EN COURS]
 • strcasecmp
 • strstr
 • strpbrk
