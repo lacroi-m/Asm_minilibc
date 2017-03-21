@@ -5,10 +5,10 @@
 ## Login   <lacroi_m@epitech.net>
 ##
 ## Started on  Wed Mar 1 14:03:03 CET 2017 Lacroix Maxime
-## Last update Tue Mar 21 15:28:20 2017 virgile
+## Last update Tue Mar 21 15:52:44 2017 virgile
 ##
 
-CC	= gcc
+CC	= ld
 
 CFLAGS	+= -W -Wall -Wextra -Werror
 
