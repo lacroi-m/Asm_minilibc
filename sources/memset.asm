@@ -1,8 +1,8 @@
 	BITS	64
 section .text
-	global my_memset:function 		;void *memset(void *s, int c, size_t n)
+	global memset:function 		;void *memset(void *s, int c, size_t n)
 					;		rdi , rsi, rdx
-my_memset:
+memset:
 	push rbp		; prologue clean propre registre extend
 	mov rbp, rsp
 	xor rcx, rcx		; int compteur

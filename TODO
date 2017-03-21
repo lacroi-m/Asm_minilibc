@@ -2,7 +2,7 @@ Virgile:
 • [STRLEN]: DONE
 • strchr : DONE
 • rindex
-• memmove
+• memmove : DONE
 • memset : DONE
 • memcpy
 

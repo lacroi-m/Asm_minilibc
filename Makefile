@@ -5,7 +5,7 @@
 ## Login   <lacroi_m@epitech.net>
 ##
 ## Started on  Wed Mar 1 14:03:03 CET 2017 Lacroix Maxime
-## Last update Tue Mar 21 15:52:44 2017 virgile
+## Last update Tue Mar 21 16:16:55 2017 virgile
 ##
 
 CC	= ld
@@ -23,6 +23,7 @@ NAME	= libasm.so
 SRCS	= $(addprefix sources/, \
 		strchr.asm\
 		strlen.asm\
+		memmove.asm\
 		memset.asm\
 		strcmp.asm)
 

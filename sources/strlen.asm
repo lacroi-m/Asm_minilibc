@@ -1,9 +1,9 @@
 BITS	64
 section .text
-	global my_strlen:function
+	global strlen:function
 				; size_t strlen(const char *s)
 				; 		rdi 
-my_strlen:
+strlen:
 	push rbp
 	mov rbp, rsp 		; prologue crée son propre espace sur la pile = prologue
 	XOR	rcx, rcx	; int compteur ( int i)
