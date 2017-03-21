@@ -5,7 +5,7 @@
 ## Login   <lacroi_m@epitech.net>
 ##
 ## Started on  Wed Mar 1 14:03:03 CET 2017 Lacroix Maxime
-## Last update Mon Mar 20 20:55:32 2017 Lacroix Maxime
+## Last update Tue Mar 21 15:28:20 2017 virgile
 ##
 
 CC	= gcc
@@ -23,6 +23,7 @@ NAME	= libasm.so
 SRCS	= $(addprefix sources/, \
 		strchr.asm\
 		strlen.asm\
+		memset.asm\
 		strcmp.asm)
 
 OBJS	= $(SRCS:.asm=.o)

@@ -3,7 +3,7 @@ Virgile:
 • strchr : DONE
 • rindex
 • memmove
-• memset
+• memset : DONE
 • memcpy
 
 Max:
