@@ -11,7 +11,7 @@ memcpy:
 .while:
 	cmp rcx, rdx		; while (i < n)
 	je .end			; ret
-	mov [rsi + rcx], rdi    ; src[i] = dest[i];
+	mov [rsi + rcx], rdi	    ; src[i] = dest[i];
 	inc rcx			; i++
 	jmp .while		; boucle
 
