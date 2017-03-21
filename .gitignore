@@ -1,5 +1,5 @@
 libasm.so
 *.o
-*.~
+*~
 #*#
 test
