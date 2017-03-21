@@ -1,9 +1,9 @@
 BITS	64
 section .text
-	global memmove:function	; void *memmove(void *dest, const void *src, size_t n)
+	global memcpy:function	; void *memmove(void *dest, const void *src, size_t n)
 				;                     rdi, rsi , rdx
 
-memmove:
+memcpy:
 	push rbp
 	mov rbp, rsp		; epilogue
 	xor rcx, rcx		; int i
