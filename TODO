@@ -9,7 +9,7 @@ Virgile:
 Max:
 • strcmp [TESTED] attente de la moulinnette
 • strncmp [TESTED] attente de la moulinnette
-• strcasecmp [ENCOURS]
+• strcasecmp [TESTED] attente de la moulinnette
 • strstr
 • strpbrk
 • strcspn
