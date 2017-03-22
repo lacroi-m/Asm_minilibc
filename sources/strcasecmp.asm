@@ -51,7 +51,7 @@ maji:
 	ADD	bl, 32
 	CMP	bl, r8b
 	JE	_inc
-	JNE	mam	;everything is going here
+	JNE	mam
 mam:
 	SUB	bl, 32
 	JMP	diff
@@ -63,9 +63,6 @@ _inc:
 diff:
 	SUB	r8, rbx
 	MOV	rax, r8
-	JMP	prologue
-diff_t:
-	MOV	rax, 2222
 	JMP	prologue
 _eq:
 	MOV	rax, 0

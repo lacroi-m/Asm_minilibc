@@ -10,7 +10,7 @@ Max:
 • strcmp [TESTED] attente de la moulinnette
 • strncmp [TESTED] attente de la moulinnette
 • strcasecmp [TESTED] attente de la moulinnette
-• strstr
+• strstr [En Cours]
 • strpbrk
 • strcspn
 
