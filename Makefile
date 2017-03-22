@@ -5,7 +5,7 @@
 ## Login   <lacroi_m@epitech.net>
 ##
 ## Started on  Wed Mar 1 14:03:03 CET 2017 Lacroix Maxime
-## Last update Tue Mar 21 20:01:57 2017 Lacroix Maxime
+## Last update Wed Mar 22 15:06:04 2017 virgile
 ##
 
 CC	= ld
@@ -26,6 +26,7 @@ SRCS	= $(addprefix sources/, \
 		memcpy.asm\
 		memset.asm\
 		strcmp.asm\
+		rindex.asm\
 		strncmp.asm)
 
 OBJS	= $(SRCS:.asm=.o)

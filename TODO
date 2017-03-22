@@ -1,10 +1,10 @@
 Virgile:
 • [STRLEN]: DONE
 • strchr : DONE
-• rindex : 
-• memmove :
+• rindex : DONE
 • memset : DONE
 • memcpy : DONE
+• memmove : the last omg trop la flemme
 
 Max:
 • strcmp [TESTED] attente de la moulinnette

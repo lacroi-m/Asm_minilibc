@@ -9,9 +9,11 @@ memcpy:
 	xor rcx, rcx		; int i
 
 .while:
-	cmp rcx, rdx		; while (i < n)
+	cmp rdx, 0		; while (i < n)
 	je .end			; ret
-	mov [rsi + rcx], rdi	    ; src[i] = dest[i];
+	mov al,[rsi + rcx]
+	mov [rdi + rcx], al			; src[i] = dest[i];
+	dec rdx
 	inc rcx			; i++
 	jmp .while		; boucle
 
