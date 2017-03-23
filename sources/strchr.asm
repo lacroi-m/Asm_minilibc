@@ -5,6 +5,7 @@ BITS	64
 strchr:
 	push rbp
 	mov rbp, rsp		; prologue
+	xor rcx, rcx
 
 .while:
 	cmp [rdi], BYTE 0    ; if s[i] = \0

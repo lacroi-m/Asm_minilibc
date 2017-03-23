@@ -8,9 +8,9 @@ memset:
 	xor rcx, rcx		; int compteur
 
 .while:
-	cmp rcx, rdx		; while (rcx != rdx) i < n taille a ecrire
+	cmp rdx, rcx		; while (rcx != rdx) i < n taille a ecrire
 	je .end
-	mov [rdi + rcx], rsi	; remplis dans s[i] par c (char voulu);
+	mov [rdi + rcx], sil	; remplis dans s[i] par c (char voulu); lower pile
 	inc rcx			; i++
 	jmp .while		; boucle
 
