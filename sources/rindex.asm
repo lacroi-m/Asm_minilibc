@@ -1,8 +1,8 @@
 BITS	64
 section .text
-	global my_rindex:function  ; char *rindex(const char *s, int c)
+	global rindex:function  ; char *rindex(const char *s, int c)
 				;  		rdi, rsi
-my_rindex:			;
+rindex:			;
 	push rbp
 	mov rbp, rsp
 	xor rcx, rcx
