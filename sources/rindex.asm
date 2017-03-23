@@ -2,7 +2,7 @@ BITS	64
 section .text
 	global rindex:function  ; char *rindex(const char *s, int c)
 				;  		rdi, rsi
-rindex:			;
+rindex:
 	push rbp
 	mov rbp, rsp
 	xor rcx, rcx
