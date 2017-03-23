@@ -9,24 +9,20 @@ rindex:
 	xor r9, r9
 
 .while:
-	cmp [rdi], BYTE 0
-	je .exit
+	cmp [rdi], 0x00
+	je .end
 	cmp [rdi], sil
 	je .save
 	inc rdi
 	jmp .while
 
 .save:
-	mov r9, rdi
+	xor rax, rax
+	mov rax, rdi
 	inc rdi
 	jmp .while
 
-.exit:
-	mov r9, 0x00
-	jmp .end
-
 .end:
-	mov rax, r9
 	mov rsp, rbp
 	pop rbp
 	ret

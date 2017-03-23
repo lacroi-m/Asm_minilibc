@@ -5,13 +5,12 @@ BITS	64
 strchr:
 	push rbp
 	mov rbp, rsp		; prologue
-	xor rcx, rcx
 
 .while:
+	cmp [rdi], sil	     ; si s[i] = c
+	je .found
 	cmp [rdi], BYTE 0    ; if s[i] = \0
 	je .nofound		; ret NULL
-	cmp [rdi], sil	     ; si s[i] = c
-	je .found	     ; ret value
 	inc rdi			; i++
 	jmp .while
 
