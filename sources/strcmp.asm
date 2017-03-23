@@ -1,36 +1,38 @@
 BITS	64
-section	.text
-	global	strcmp:function
+section .text
+	global strcmp:function
+
 strcmp:
 	PUSH	rbp
 	MOV	rbp, rsp
-
-	XOR	rcx, rcx	;compteur int
-	XOR	bl, bl
+	XOR	rcx, rcx
+	XOR	r8, r8
+	XOR	r9, r9
 loop:
+	MOV	r8b, [rdi + rcx]
+	MOV	r9b, [rsi]
 	CMP	[rdi + rcx], BYTE 0
-	JE	_eq
-	MOV	bl, [rsi]
-	CMP	[rdi + rcx], bl
+	JE	check
+	CMP	[rdi + rcx], r9b
 	JNE	diff
 	INC	rcx
 	INC	rsi
 	JMP	loop
 
+check:
+	CMP	[rsi + rcx], BYTE 0
+	JE	_eq
+	CMP	[rsi + rcx], BYTE 0
+	JNE	diff
+
 diff:
-	CMP	[rdi + rcx], bl
-	JL	less
-	CMP	[rdi + rcx], bl
-	JG	greater
-less:
-	MOV	rax, -1
-	JMP	prologue
-greater:
-	MOV	rax, 1
+	SUB	r8, r9
+	MOV	rax, r8
 	JMP	prologue
 _eq:
 	MOV	rax, 0
 	JMP	prologue
+
 prologue:
 	MOV	rsp, rbp
 	POP	rbp
