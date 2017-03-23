@@ -1,8 +1,8 @@
 BITS	64
 section .text
-	global	my_strcmp:function ;strncmp(const char *s1, const char *s2)
+	global	strcmp:function ;strcmp(const char *s1, const char *s2)
 
-my_strcmp:			    ;		s1->rdi		s2->rsi
+strcmp:			    ;		s1->rdi		s2->rsi
 	PUSH	rbp
 	MOV	rbp, rsp	    ;prologue
 
