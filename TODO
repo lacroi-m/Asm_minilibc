@@ -7,10 +7,10 @@ Virgile:
 • memmove : the last omg trop la flemme
 
 Max:
-• strcmp [TESTED] attente de la moulinnette
-• strncmp [TESTED] attente de la moulinnette
-• strcasecmp [TESTED] attente de la moulinnette
-• strstr [En Cours]
+• strcmp [TESTED] [FIXED] attente de la moulinnette
+• strncmp [DONE]
+• strcasecmp [DONE]
+• strstr [En Cours][TIMEOUT(normal)]
 • strpbrk
 • strcspn
 
