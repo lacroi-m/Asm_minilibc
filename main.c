@@ -5,7 +5,7 @@
 ** Login   <juniqu_v@epitech.net>
 **
 ** Started on  Wed Mar  8 10:51:36 2017 virgile
-** Last update Thu Mar 23 15:22:43 2017 virgile
+** Last update Thu Mar 23 16:19:16 2017 virgile
 */
 
 #include <stdio.h>
@@ -75,7 +75,7 @@ void	test_rindex()
   char	*src = "putetadf";
   char	*dest;
 
-  t1 = my_rindex("pute", 't');
+  t1 = my_rindex("pu\0te", '\0');
   t5 = my_rindex("pute", 't');
   t2 = my_rindex("pute", 'v');
   t3 = my_rindex("", 'e');

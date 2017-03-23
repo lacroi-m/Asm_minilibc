@@ -1,28 +1,36 @@
 BITS	64
 section .text
-	global rindex:function  ; char *rindex(const char *s, int c)
+	global my_rindex:function  ; char *rindex(const char *s, int c)
 				;  		rdi, rsi
-
-rindex:
+my_rindex:			;
 	push rbp
 	mov rbp, rsp
-	xor r9, r9
+	xor rcx, rcx
+
+.count:
+	cmp [rdi + rcx], BYTE 0
+	je .while
+	inc rcx
+	jmp .count
 
 .while:
-	cmp [rdi], sil
-	je .save
-	cmp [rdi], BYTE 0
-	je .end
-	inc rdi
+	cmp [rdi + rcx], sil
+	je .found
+	cmp rcx, BYTE 0
+	je .notfound
+	dec rcx
 	jmp .while
 
-.save:
-	mov r9, rdi
-	inc rdi
-	jmp .while
+.notfound:
+	mov rax, 0
+	jmp .end
+
+.found:
+	mov rax, rdi
+	add rax, rcx
+	jmp .end
 
 .end:
-	mov rax, r9
 	mov rsp, rbp
 	pop rbp
 	ret
