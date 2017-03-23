@@ -10,7 +10,7 @@ rindex:
 
 .while:
 	cmp [rdi], BYTE 0
-	je .end
+	je .exit
 	cmp [rdi], sil
 	je .save
 	inc rdi
@@ -20,6 +20,10 @@ rindex:
 	mov r9, rdi
 	inc rdi
 	jmp .while
+
+.exit:
+	mov r9, 0x00
+	jmp .end
 
 .end:
 	mov rax, r9
