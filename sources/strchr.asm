@@ -15,7 +15,7 @@ strchr:
 	jmp .while
 
 .nofound:
-	mov rax, 0x00		; ret NULL sois 0
+	xor rax, rax		; ret NULL sois 0
 	jmp .end
 
 .found:

@@ -5,7 +5,7 @@
 ** Login   <juniqu_v@epitech.net>
 **
 ** Started on  Wed Mar  8 10:51:36 2017 virgile
-** Last update Wed Mar 22 17:28:09 2017 virgile
+** Last update Thu Mar 23 15:22:43 2017 virgile
 */
 
 #include <stdio.h>
@@ -61,6 +61,7 @@ static void	test_strchr()
  printf("test true %s", ptr2);
 
 }
+*/
 
 char	*my_rindex(const char *s, int c);
 
@@ -71,11 +72,11 @@ void	test_rindex()
   char	*t3;
   char	*t4;
   char	*t5;
-  char	*src = "putet";
+  char	*src = "putetadf";
   char	*dest;
 
   t1 = my_rindex("pute", 't');
-  t5 = rindex("pute", 't');
+  t5 = my_rindex("pute", 't');
   t2 = my_rindex("pute", 'v');
   t3 = my_rindex("", 'e');
   t4 = my_rindex("put salo de mrtb", 't');
@@ -85,10 +86,10 @@ void	test_rindex()
   printf("test 5 ,t =  %s\n", t5);
   printf("test 2, NULL = %s\n", t2);
   printf("test3, NULL = %s\n", t3);
-  printf("test4, t = %s\n", t4);
-
+  printf("rindex de src avec t dest = %s, src = %s\n", dest, src);
+  printf("%p == %p", dest[0], src[4]);
 }
-*/
+
 
 #include <assert.h>
 #include <stdlib.h>
@@ -123,6 +124,6 @@ int	test_memcpy()
 
 int	main()
 {
-
+  test_rindex();
   return (0);
 }
