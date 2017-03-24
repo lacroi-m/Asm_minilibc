@@ -34,7 +34,7 @@ found:
 	MOV 	rax, rdi
 	JMP 	prologue
 nope:
-	MOV 	rax, 0
+	XOR 	rax, rax
 	
 prologue:
 	MOV 	rsp, rbp

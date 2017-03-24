@@ -32,7 +32,7 @@ diff:
 	MOV	rax, r8
 	JMP	prologue
 _eq:
-	MOV	rax, 0
+	XOR	rax, rax
 	JMP	prologue
 
 prologue:
