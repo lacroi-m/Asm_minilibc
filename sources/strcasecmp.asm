@@ -1,67 +1,75 @@
 BITS	64
-section .text	
-	global	strcasecmp:function ;int strcasecmp(const char *s1, const char *s2);
-strcasecmp:			       ;		  s1->rdi	s2->rsi
+section .text
+	global strcasecmp:function
+
+strcasecmp:
 	PUSH	rbp
-	MOV	rbp, rsp	    ;prologue
-
-	XOR	r8, r8		    ;(registre general)for stocking caracters of s1
-	XOR	rbx, rbx	    ;(registre general)for stocking caracters of s2
+	MOV	rbp, rsp
+	XOR	rcx, rcx
+	XOR	r8, r8
+	XOR	r9, r9
 loop:
-	MOV	r8b, [rdi]
-	MOV	bl, [rsi]
-
-	CMP	r8b, 0
-	JE	is_eq
-	
-	CMP	bl, r8b
-	JNE	maj_upp
-	JE	_inc
-is_eq:
-	CMP	bl, 0
+	CMP	rcx, rdx
 	JE	_eq
-	JNE	diff
-maj_upp:
+	MOV	r8b, [rdi + rcx]
+	MOV	r9b, [rsi]
+	CMP	[rdi + rcx], BYTE 0
+	JE	check
+	CMP	[rdi + rcx], r9b
+	JNE	diff_check
+	INC	rcx
+	INC	rsi
+	JMP	loop
+
+diff_check:
 	CMP	r8b, "A"
 	JGE	maj_low
-	JL	diff
+	JMP	diff
 maj_low:
 	CMP	r8b, "Z"
 	JLE	mini
-	JG	min_upp
+	JMP	min_upp
 min_upp:
 	CMP	r8b, "a"
 	JGE	min_low
-	JL	diff
+	JMP	diff
 min_low:
 	CMP	r8b, "z"
-	JLE	maji
-	JG	diff
+	JL	maji
+	JMP	diff
 
 mini:
 	ADD	r8b, 32
-	CMP	r8b, bl
-	JE	_inc
-	JNE	min
-min:
+	CMP	r8b, r9b
+	JNE	mim
+	SUB	r8b, 32
+	INC	rcx
+	INC	rsi
+	JMP	loop
+mim:
 	SUB	r8b, 32
 	JMP	diff
 
 maji:
-	ADD	bl, 32
-	CMP	bl, r8b
-	JE	_inc
-	JNE	mam
-mam:
-	SUB	bl, 32
-	JMP	diff
-_inc:
-	INC	rdi
+	SUB	r8b, 32
+	CMP	r8b, r9b
+	JNE	maj
+	ADD	r8b, 32
+	INC	rcx
 	INC	rsi
 	JMP	loop
+maj:
+	ADD	r8b, 32
+	JMP	diff
+	
+check:
+	CMP	[rsi + rcx], BYTE 0
+	JE	_eq
+	CMP	[rsi + rcx], BYTE 0
+	JNE	diff
 
 diff:
-	SUB	r8, rbx
+	SUB	r8, r9
 	MOV	rax, r8
 	JMP	prologue
 _eq:

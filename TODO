@@ -8,8 +8,8 @@ Virgile:
 
 Max:
 • strcmp [TESTED] [FIXED] [AGAIN]
-• strncmp [DONE]
-• strcasecmp [DONE]
+• strncmp [DONE] [FIXED]
+• strcasecmp [DONE] [REWORKED]
 • strstr [En Cours][TIMEOUT(normal)]
 • strpbrk
 • strcspn
