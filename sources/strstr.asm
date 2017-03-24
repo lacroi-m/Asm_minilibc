@@ -1,32 +1,42 @@
-BITS	64
+BITS 64
 section .text
- 	global strstr:function ;char *strstr(const char *haystack, const char *needle);
-	;; 						rdi		rsi
+	global strstr:function	; char *strstr(const char *haystack, const char *needle);
+							; rdi 			      rsi
 strstr:
-	PUSH	rbp
-	MOV	rbp, rsp
-	XOR	rcx, rcx	;compteur de haystack
-	XOR	ecx, ecx	;compteur de needle
-	XOR	rbx, rbx	;for
-	XOR	r9, r9
+	PUSH 	rbp
+	MOV 	rbp, rsp
+	XOR	rcx, rcx
+	XOR	r8, r8
 loop:
-	CMP	rdi, rsi
-	JE	send
-	JMP	loop
-inc_hay:
-	INC	rcx
-inc_need:
-	INC	ecx
-reset:
-	MOV	ecx, 0	
+	MOV 	r8b, [rdi]
+	CMP 	r8b, [rsi]
+	JE 	reset
+check:
+	CMP 	r8b, 0
+	JE 	nope
+	INC 	rdi
+	JMP 	loop
 
-send:
-	MOV	rax, rsi
-	JMP	prologue
-nothing:
-	MOV	rax, 0
-	JMP	prologue
+reset:
+	XOR 	rcx, rcx
+
+loop_found:
+	MOV 	r8b, [rdi + rcx]
+	MOV 	r8b, [rsi + rcx]
+	CMP 	r8b, 0
+	JE 	found
+	CMP 	r8b, r8b
+	JNE 	check
+	INC 	rcx
+	JMP 	loop_found
+
+found:
+	MOV 	rax, rdi
+	JMP 	prologue
+nope:
+	MOV 	rax, 0
+	
 prologue:
-	MOV	rsp, rbp
-	POP	rbp
-	RET
+	MOV 	rsp, rbp
+	POP 	rbp
+	RET 	0

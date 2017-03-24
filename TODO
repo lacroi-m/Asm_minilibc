@@ -10,7 +10,7 @@ Max:
 • strcmp [TESTED] [FIXED] [AGAIN]
 • strncmp [DONE] [FIXED]
 • strcasecmp [DONE] [REWORKED]
-• strstr [En Cours][TIMEOUT(normal)]
+• strstr [DONE]
 • strpbrk
 • strcspn
 
