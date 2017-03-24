@@ -1,7 +1,7 @@
 BITS	64
 section .text
-	global strncmp:function
-
+	global strncmp:function ;int strncmp(const char *s1, const char *s2, size_t n)
+	;; 					rdi		rsi		rcx
 strncmp:
 	PUSH	rbp
 	MOV	rbp, rsp
