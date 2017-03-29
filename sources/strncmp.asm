@@ -24,17 +24,12 @@ loop:
 check:
 	CMP	[rsi + rcx], BYTE 0
 	JE	_eq
-	CMP	[rsi + rcx], BYTE 0
-	JNE	diff
-
 diff:
 	SUB	r8, r9
 	MOV	rax, r8
 	JMP	prologue
 _eq:
 	XOR	rax, rax
-	JMP	prologue
-
 prologue:
 	MOV	rsp, rbp
 	POP	rbp
